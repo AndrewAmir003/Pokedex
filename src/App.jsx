@@ -3,10 +3,12 @@ import { PokemonData } from './components'
 
 
 function App() {
-    
+    const [pokemonData, setPokemonData] = useState([]);
     return (
       <>
-        <PokemonData />
+        <PokemonData 
+        pokemonData={pokemonData} 
+        setPokemonData={setPokemonData}/>
       </>
     );
 }

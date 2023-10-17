@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 
-export default function PokemonData() {
-  const [pokemonData, setPokemonData] = useState([]);
-  useEffect(() => {
+export default function PokemonData({pokemonData, setPokemonData}) {
+ 
+    useEffect(() => {
     getPokemon();
   }, []);
 
@@ -45,12 +45,6 @@ export default function PokemonData() {
           <p>ID: {pokemon.id}</p>
           <p>Height: {pokemon.height}</p>
           <p>Weight: {pokemon.weight}</p>
-          <p>
-            Abilities:{" "}
-            {pokemon.abilities
-              .map((ability) => ability.ability.name)
-              .join(", ")}
-          </p>
           <img src={pokemon.sprites.front_default} alt={pokemon.name} />
         </div>
       ))}
